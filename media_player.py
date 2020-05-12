@@ -72,7 +72,8 @@ NORMAL_INPUTS_CXA61 = {
     "Rec 2" : "#02,01,08",
     "USB" : "#02,01,09",
     "7.1 Direct In" : "#02,01,10",
-    "Expansion" : "#02,01,11"
+    "Expansion" : "#02,01,11",
+    "ARC" : "#02,01,12"
 }
 
 NORMAL_INPUTS_CXA81 = {
@@ -113,7 +114,8 @@ NORMAL_INPUTS_AMP_REPLY_CXA61 = {
     "#07,01,08" : "Rec 2",
     "#07,01,09" : "USB",
     "#07,01,10" : "7.1 Direct In",
-    "#07,01,11" : "Expansion"
+    "#07,01,11" : "Expansion",
+    "#07,01,12" : "ARC"
 }
 
 SOUND_MODES = {
