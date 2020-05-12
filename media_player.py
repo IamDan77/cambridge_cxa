@@ -225,7 +225,7 @@ class CambridgeCXADevice(MediaPlayerDevice):
 
     @property
     def state(self):
-        if "02,01,1" in self._pwstate:
+        if "06,01,01" in self._pwstate:
             return STATE_ON
         else:
             return STATE_OFF
