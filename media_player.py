@@ -61,16 +61,18 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 )
 
 NORMAL_INPUTS_CXA61 = {
-    "A1" : "#03,04,00",
-    "A2" : "#03,04,01",
-    "A3" : "#03,04,02",
-    "A4" : "#03,04,03",
-    "D1" : "#03,04,04",
-    "D2" : "#03,04,05",
-    "D3" : "#03,04,06",
-    "Bluetooth" : "#03,04,14",
-    "USB" : "#03,04,16",
-    "MP3" : "#03,04,10"
+    "Tuner" : "#02,01,00",
+    "BD/DVD" : "#02,01,01",
+    "Video 1" : "#02,01,02",
+    "Video 2" : "#02,01,03",
+    "Video 3" : "#02,01,04",
+    "Rec 1" : "#02,01,05",
+    "AUX" : "#02,01,06",
+    "CD" : "#02,01,07",
+    "Rec 2" : "#02,01,08",
+    "USB" : "#02,01,09",
+    "7.1 Direct In" : "#02,01,10",
+    "Expansion" : "#02,01,11"
 }
 
 NORMAL_INPUTS_CXA81 = {
@@ -86,7 +88,7 @@ NORMAL_INPUTS_CXA81 = {
     "XLR" : "#03,04,20"
 }
 
-NORMAL_INPUTS_AMP_REPLY_CXA61 = {
+NORMAL_INPUTS_AMP_REPLY_CXA81 = {
     "#04,01,00" : "A1",
     "#04,01,01" : "A2",
     "#04,01,02" : "A3",
@@ -99,17 +101,19 @@ NORMAL_INPUTS_AMP_REPLY_CXA61 = {
     "#04,01,10" : "MP3"
 }
 
-NORMAL_INPUTS_AMP_REPLY_CXA81 = {
-    "#04,01,00" : "A1",
-    "#04,01,01" : "A2",
-    "#04,01,02" : "A3",
-    "#04,01,03" : "A4",
-    "#04,01,04" : "D1",
-    "#04,01,05" : "D2",
-    "#04,01,06" : "D3",
-    "#04,01,14" : "Bluetooth",
-    "#04,01,16" : "USB",
-    "#04,01,20" : "XLR"
+NORMAL_INPUTS_AMP_REPLY_CXA61 = {
+    "#07,01,00" : "Tuner",
+    "#07,01,01" : "BD/DVD",
+    "#07,01,02" : "Video 1",
+    "#07,01,03" : "Video 2",
+    "#07,01,04" : "Video 3",
+    "#07,01,05" : "Rec 1",
+    "#07,01,06" : "AUX",
+    "#07,01,07" : "CD",
+    "#07,01,08" : "Rec 2",
+    "#07,01,09" : "USB",
+    "#07,01,10" : "7.1 Direct In",
+    "#07,01,11" : "Expansion"
 }
 
 SOUND_MODES = {
@@ -118,19 +122,19 @@ SOUND_MODES = {
     "B" : "#1,25,2"
 }
 
-AMP_CMD_GET_PWSTATE = "#01,01"
-AMP_CMD_GET_CURRENT_SOURCE = "#03,01"
-AMP_CMD_GET_MUTE_STATE = "#01,03"
+AMP_CMD_GET_PWSTATE = "#06,01"
+AMP_CMD_GET_CURRENT_SOURCE = "#07,01"
+AMP_CMD_GET_MUTE_STATE = "#06,11"
 
-AMP_CMD_SET_MUTE_ON = "#01,04,1"
-AMP_CMD_SET_MUTE_OFF = "#01,04,0"
-AMP_CMD_SET_PWR_ON = "#01,02,1"
-AMP_CMD_SET_PWR_OFF = "#01,02,0"
+AMP_CMD_SET_MUTE_ON = "#01,11,01"
+AMP_CMD_SET_MUTE_OFF = "#01,11,00"
+AMP_CMD_SET_PWR_ON = "#01,01,01"
+AMP_CMD_SET_PWR_OFF = "#01,01,00"
 
-AMP_REPLY_PWR_ON = "#02,01,1"
-AMP_REPLY_PWR_STANDBY = "#02,01,0"
-AMP_REPLY_MUTE_ON = "#02,03,1"
-AMP_REPLY_MUTE_OFF = "#02,03,0"
+AMP_REPLY_PWR_ON = "#06,01,01"
+AMP_REPLY_PWR_STANDBY = "#06,01,00"
+AMP_REPLY_MUTE_ON = "#06,11,01"
+AMP_REPLY_MUTE_OFF = "#06,11,00"
 
 def setup_platform(hass, config, add_devices, discovery_info=None):
     host = config.get(CONF_HOST)
